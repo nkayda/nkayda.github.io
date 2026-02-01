@@ -8,6 +8,7 @@ body {
     margin: 0rem;
     display: flex;
     flex-direction: column;
+    gap: 2rem;
 }
 
 h1 {
@@ -21,6 +22,7 @@ h1 {
 p {
     font-size: 1rem;
     text-decoration: none;
+    margin: 0rem;
 }
 
 a {
@@ -34,9 +36,15 @@ li {
 section {
     display: flex;
     flex-direction: column;
+    width: 95%;
+    max-width: 72rem;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
     justify-content: center;
 }
 
+/* ------------------------------ */
 
 .mono {
     font-family: "Ubuntu Mono", monospace;
@@ -45,14 +53,27 @@ section {
 .reg {
     font-family: "Figtree", sans-serif;
     font-weight: 400;
+
 }
 
 .opacity-50 {
-    opacity: 50%;;
+    opacity: 50%;
+}
+
+/* ------------------------------ */
+
+.pale-link {
+    opacity: 50%;
+}
+
+.pale-link:hover {
+    opacity: 100%;
+    transition: all 0.3s ease-out;
 }
 
 a:hover {
     text-decoration: underline !important;
+    transition: all 0.3s ease-out;
 }
 
 .navbar {
@@ -82,13 +103,12 @@ a:hover {
 
 .nav-icon:hover {
     scale: 1.1;
+    transition: all 0.3s ease-out;
 }
 
 .landing-section {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
     min-height: 18rem;
 }
 
@@ -101,16 +121,27 @@ a:hover {
 .line-divider {
     border-bottom: solid 1px #282828;
     width: 100%;
-    max-width: 90%;
+    max-width: 72rem;
     margin: 1rem auto;
 }
 
 .column-split {
     display: flex;
     flex-direction: row;
-    gap: 2.25rem
+    gap: 2.5rem
 }
 
 .column {
-    width: 1fr;
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    gap: 1rem;
+    height: 100%;
+}
+
+.column-split {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    height: 200px;
 }
