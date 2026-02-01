@@ -1,0 +1,116 @@
+* {
+    color: #EEEEEE;
+    font-size: 1rem;
+}
+
+body {
+    background-color: #121212;
+    margin: 0rem;
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    font-family: "Figtree", sans-serif;
+    font-weight: 350;
+    font-size: 2rem;
+    text-align: center;
+    width: 100%;
+}
+
+p {
+    font-size: 1rem;
+    text-decoration: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    font-family: "Ubuntu Mono", monospace;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.mono {
+    font-family: "Ubuntu Mono", monospace;
+}
+
+.reg {
+    font-family: "Figtree", sans-serif;
+    font-weight: 400;
+}
+
+.opacity-50 {
+    opacity: 50%;;
+}
+
+a:hover {
+    text-decoration: underline !important;
+}
+
+.navbar {
+    border-bottom: solid 1px #282828;
+    width: 100%;
+    padding: .1rem;
+}
+
+.nav-elements {
+    display: flex;
+    flex-direction: row;
+    gap: 4rem;
+    align-items: center;
+    justify-content: center;
+    padding: 0rem 4rem;
+}
+
+.nav-elements li, a {
+    list-style: none;
+    text-decoration: none;
+}
+
+.rotated-arrow {
+    --fa-rotate-angle: -135deg;
+    opacity: 50%;
+}
+
+.nav-icon:hover {
+    scale: 1.1;
+}
+
+.landing-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 18rem;
+}
+
+.two-col {
+    display: flex;
+    flex-direction: row;
+    gap: 4rem;
+}
+
+.line-divider {
+    border-bottom: solid 1px #282828;
+    width: 100%;
+    max-width: 90%;
+    margin: 1rem auto;
+}
+
+.column-split {
+    display: flex;
+    flex-direction: row;
+    gap: 2.25rem
+}
+
+.column {
+    width: 1fr;
+}
