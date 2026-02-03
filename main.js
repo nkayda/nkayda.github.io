@@ -1,1 +1,1 @@
-console.log("main.js doesnt have anything yet, but it's here!");
+console.log("main.js doesnt have anything yet, but it's here! I didnt need to make any interactions CSS couldn't handle.");
