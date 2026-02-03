@@ -1,5 +1,5 @@
 * {
-    color: #EEEEEE;
+    color: #d5d5d5;
     font-size: 1rem;
     box-sizing: border-box;
 }
@@ -9,23 +9,35 @@ body {
     margin: 0rem;
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 4rem;
     min-height: 100vh;
 }
 
 h1 {
-    font-family: "Figtree", sans-serif;
+    font-family: "Ubuntu Mono", monospace;
     font-weight: 350;
     font-size: 2rem;
     text-align: center;
     width: 100%;
+    text-transform: uppercase;
+    line-height: 2.5rem;
+}
+
+h2 {
+    font-family: "Ubuntu Mono", monospace;
+    font-weight: 350;
+    font-size: 1.5rem;
+    width: 100%;
+    line-height: 2rem;
+    margin-top: 0rem;
 }
 
 p {
     font-size: 1rem;
     text-decoration: none;
     margin: 0rem;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: "Ubuntu Mono", monospace, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    line-height: 1.25rem;
 }
 
 a {
@@ -34,6 +46,10 @@ a {
 
 li {
     font-family: "Ubuntu Mono", monospace;
+}
+
+img {
+    border-radius: .25rem;
 }
 
 section {
@@ -62,25 +78,12 @@ footer {
 
 /* ------------------------------ */
 
-.mono {
-    font-family: "Ubuntu Mono", monospace;
-}
-
-.reg {
-    font-family: "Figtree", sans-serif;
-    font-weight: 300;
-
-}
-
 .opacity-50 {
-    opacity: 50%;
+    opacity: 40%;
 }
 
 /* ------------------------------ */
 
-.pale-link {
-    opacity: 50%;
-}
 
 .pale-link:hover {
     opacity: 100%;
@@ -130,12 +133,6 @@ a:hover {
     min-height: 18rem;
 }
 
-.two-col {
-    display: flex;
-    flex-direction: row;
-    gap: 4rem;
-}
-
 .line-divider {
     border-bottom: solid 1px #282828;
     width: 90%;
@@ -152,7 +149,7 @@ a:hover {
 .column {
     display: flex;
     flex-direction: column;
-    width: 30%;
+    width: 100%;
     gap: 1rem;
     height: 100%;
 }
@@ -162,4 +159,42 @@ a:hover {
     flex-direction: row;
     justify-content: center;
     height: fit-content;
+}
+
+.visualization-container {
+    background-color: #d5d5d5;
+    width: 100%;
+    min-height: 24rem;
+    border-radius: .25rem;
+    border: 2px solid #747474;
+}
+
+.img-responsive {
+    width: 100%;
+    height: auto;
+}
+
+.text-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: .25rem;
+}
+
+.block-link:hover {
+    scale: 1.01;
+    transition: all 0.3s ease-out;
+}
+
+@media (max-width: 40rem) {
+  .column-split {
+    flex-direction: column;
+    width: 100%;
+  }
+}
+
+@media (max-width: 40rem) {
+  h1 {
+    font-size: 1.5rem;
+  }
 }
