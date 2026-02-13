@@ -24,7 +24,7 @@ h1 {
 }
 
 h2 {
-    font-family: "Ubuntu Mono", monospace;
+    font-family: "Figtree", sans-serif;
     font-weight: 350;
     font-size: 1.5rem;
     width: 100%;
@@ -36,7 +36,7 @@ p {
     font-size: 1rem;
     text-decoration: none;
     margin: 0rem;
-    font-family: "Ubuntu Mono", monospace, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: "Figtree", sans-serif;
     line-height: 1.25rem;
 }
 
@@ -80,6 +80,10 @@ footer {
 
 .opacity-50 {
     opacity: 40%;
+}
+
+.mono {
+    font-family: "Ubuntu Mono", monospace, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 /* ------------------------------ */
@@ -162,11 +166,23 @@ a:hover {
 }
 
 .visualization-container {
-    background-color: #d5d5d5;
+    background-color: #fff;
     width: 100%;
     min-height: 24rem;
     border-radius: .25rem;
     border: 2px solid #747474;
+    padding: 3rem 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#view,
+#view2 {
+  width: 100%;
+  height: 100%;
+  max-width: 800px;
 }
 
 .img-responsive {
