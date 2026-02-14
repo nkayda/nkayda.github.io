@@ -178,13 +178,6 @@ a:hover {
     align-items: center;
 }
 
-#view,
-#view2 {
-  width: 100%;
-  height: 100%;
-  max-width: 800px;
-}
-
 .img-responsive {
     width: 100%;
     height: auto;
@@ -195,6 +188,10 @@ a:hover {
     flex-direction: column;
     width: 100%;
     gap: .25rem;
+}
+
+.explanation {
+    margin: 2rem 0rem;
 }
 
 .block-link:hover {
@@ -213,4 +210,23 @@ a:hover {
   h1 {
     font-size: 1.5rem;
   }
+}
+
+/* VEGALITE */
+
+#vg-tooltip-element table tr td {
+    color: #121212;
+    font-size: .8rem;
+}
+
+#vg-tooltip-element table tr td.key {
+    color: #a7a7a7;
+    font-size: .8rem;
+}
+
+#view,
+#view2 {
+  width: 100%;
+  height: 100%;
+  max-width: 800px;
 }
