@@ -25,27 +25,31 @@ genreColours = [
 ];
 
 fetchData().then(async (data) => {
+
+  // ----------- GLOBAL SALES BY GENRE AND PLATFORM --------------
+
   const globalSalesByGenrePlatform = vl
     .markBar()
     .data(data)
     .encode(
-      vl.x().fieldN("Platform").sort("-y"),
-      vl.y()
-        .fieldQ("Global_Sales")
-        .aggregate("sum")
-        .axis({ title: "Global Sales (millions):" }),
-      vl.color().fieldN("Genre").scale({ range: genreColours }),
-
+      vl.y().fieldQ('Global_Sales').aggregate('sum')
+        .axis({ title: "Global Sales (millions)" }),
+      vl.x().fieldO('Platform'),
+      vl.color().fieldN('Genre').scale({range: genreColours}),
       vl.tooltip([
-        { field: "Genre", type: "nominal", title: "Genre:" },
-        {
-          field: "Global_Sales",
-          type: "quantitative",
-          aggregate: "sum",
-          title: "Global Sales (millions):",
+        { field: 'Genre', 
+          type: 'nominal', 
+          title: 'Genre'
         },
-      ]),
+        { field: 'Global_Sales', 
+          type: 'quantitative', 
+          aggregate: 'sum', 
+          title: 'Global Sales (millions)',
+          format: '$.2f'
+        }
+      ])
     )
+    .title('Global Sales by Genre and Platform')
     .width("container")
     .height(400)
     .toSpec();
@@ -58,40 +62,44 @@ fetchData().then(async (data) => {
       vl.filter('datum["Publisher"] == "Nintendo"'),
     )
     .encode(
-      vl.y()
-        .fieldQ("Global_Sales")
-        .aggregate("sum")
-        .axis({ title: "Global Sales of Puzzle Games (millions)" }),
-      vl.x().fieldO("Platform").sort("-y"),
+      vl.y().fieldQ('Global_Sales').aggregate('sum')
+        .axis({ title: "Global Sales (millions)" }),
+      vl.x().fieldO('Platform').sort("-y"),
       vl.color().fieldN("Name").sort("-y")
-        .legend({
-          title: "Nintendo Puzzle Game Title",
-          symbolLimit: 100,
-          columns: 3,
-          labelLimit: 300,
-          orient: "bottom",
-        }),
-
+        .legend({ title: 'Game Title', symbolLimit: 100, columns: 3, labelLimit: 300, orient: 'bottom' }),
       vl.tooltip([
-        { field: "Genre", type: "nominal", title: "Genre:" },
-        { field: "Name", type: "nominal", title: "Name:" },
-        {
-          field: "Global_Sales",
-          type: "quantitative",
-          aggregate: "sum",
-          title: "Global Sales (millions):",
+        { field: 'Genre', 
+          type: 'nominal', 
+          title: 'Genre'
         },
-      ]),
+        { field: 'Name', 
+          type: 'nominal', 
+          title: 'Name'
+        },
+        { field: 'Global_Sales', 
+          type: 'quantitative', 
+          aggregate: 'sum', 
+          title: 'Global Sales (millions)',
+          format: '$.2f'
+        }
+      ])
     )
+    .title('Global Sales of Nintendo Puzzle Games by Platform')
     .width("container")
     .height(400)
     .toSpec();
 
+
+
+  // ----------- GLOBAL SALES BY GENRE AND PLATFORM --------------
+
+
+  
   render("#view", globalSalesByGenrePlatform);
   render("#view2", globalSalesByGenrePlatformV2);
 });
 
-// --- ASSIGNMENT 1 -----------------------------------------------------------
+// --- ASSIGNMENT 2 -----------------------------------------------------------
 
 let circles = document.querySelectorAll("circle");
 
