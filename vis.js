@@ -91,12 +91,105 @@ fetchData().then(async (data) => {
 
 
 
-  // ----------- GLOBAL SALES BY GENRE AND PLATFORM --------------
+  // ----------- REGIONAL SALES VS PLATFORM --------------
+  const regionalSalesVPlatform = vl.vconcat(
+    vl.markRect()
+    .data(data)
+      .transform(
+        vl.filter('datum["Year"] > 1979 && datum["Year"] <= 2016 '),
+        vl.filter('datum["NA_Sales"] > 0')
+      )
+    .encode(
+      vl.x().fieldO('Year'),
+      vl.y().fieldN('Platform'),
+      vl.color().fieldQ('NA_Sales').aggregate('sum')
+        .legend({ title: 'Regional Sales (millions)', orient: 'top' }),
+      vl.tooltip([
+          { field: 'Year', 
+            type: 'ordinal', 
+          },
+          { field: 'Platform', 
+            type: 'nominal', 
+          },
+          { field: 'NA_Sales', 
+            type: 'quantitative', 
+            aggregate: 'sum', 
+            title: 'NA Sales (millions)',
+            format: '$.2f'
+          },
+        ])  
+    )
+    .title('Regional Sales: North America (millions)')
+    .height(400)
+    .width("container"),
+
+    vl.markRect()
+    .data(data)
+      .transform(
+        vl.filter('datum["Year"] > 1979 && datum["Year"] <= 2016 '),
+        vl.filter('datum["JP_Sales"] > 0')
+      )
+    .encode(
+      vl.x().fieldO('Year'),
+      vl.y().fieldN('Platform'),
+      vl.color().fieldQ('JP_Sales').aggregate('sum')
+        .legend({ title: 'Regional Sales (millions)', orient: 'top' }),
+      vl.tooltip([
+          { field: 'Year', 
+            type: 'ordinal', 
+          },
+          { field: 'Platform', 
+            type: 'nominal', 
+          },
+          { field: 'JP_Sales', 
+            type: 'quantitative', 
+            aggregate: 'sum', 
+            title: 'JP Sales (millions)',
+            format: '$.2f'
+          },
+        ])  
+    )
+    .title('Regional Sales: Japan (millions)')
+    .height(400)
+    .width("container"),
+
+    vl.markRect()
+    .data(data)
+      .transform(
+        vl.filter('datum["Year"] > 1979 && datum["Year"] <= 2016 '),
+        vl.filter('datum["EU_Sales"] > 0')
+      )
+    .encode(
+      vl.x().fieldO('Year'),
+      vl.y().fieldN('Platform'),
+      vl.color().fieldQ('EU_Sales').aggregate('sum')
+        .legend({ title: 'Regional Sales (millions)', orient: 'top' }),
+      vl.tooltip([
+          { field: 'Year', 
+            type: 'ordinal', 
+          },
+          { field: 'Platform', 
+            type: 'nominal', 
+          },
+          { field: 'EU_Sales', 
+            type: 'quantitative', 
+            aggregate: 'sum', 
+            title: 'EU Sales (millions)',
+            format: '$.2f'
+          },
+        ])  
+    )
+    .title('Regional Sales: Europe (millions)')
+    .height(400)
+    .width("container")
+  )
+  .toSpec();
 
 
-  
   render("#view", globalSalesByGenrePlatform);
   render("#view2", globalSalesByGenrePlatformV2);
+  
+  render("#view5", regionalSalesVPlatform);
 });
 
 // --- ASSIGNMENT 2 -----------------------------------------------------------
