@@ -295,3 +295,69 @@ yearSlider.oninput = function() {
 
     add_line_recursive(waterfront);
 }
+
+const popvis = {
+    $schema: "https://vega.github.io/schema/vega-lite/v5.json",
+
+    width: 800,
+    height: 300,
+
+    data: { url: "datasets/VanPop2001-2025.csv" },
+
+    transform: [
+        { filter: "datum.Year != null" },
+        { filter: "datum.Year <= 2021" },
+        { filter: "datum.Population > 1500000" }
+    ],
+
+    mark: {
+        type: "line",
+        strokeWidth: 4,
+        color: "#FFD200",
+        point: {
+            filled: true,
+            size: 100,
+            fill: 'white',
+            stroke: "#FFD200",
+            strokeWidth: 4
+        },
+    },
+
+    encoding: {
+        x: {
+            field: "Year",
+            type: "ordinal",
+            title: "Year",
+        },
+        y: {
+            field: "Population",
+            type: "quantitative",
+            title: "Population",
+            scale: {
+                domain: [1900000, 2800000]
+            }
+        },
+
+        tooltip: [
+            { field: "Year", type: "ordinal", title: "Year" },
+            { field: "Population", type: "quantitative", title: "Population", format: "," }
+        ]
+    },
+    config: {
+        font: "Fira Sans",
+
+        axis: {
+            labelFont: "Fira Sans",
+            titleFont: "Fira Sans",
+            labelFontSize: 12,
+            titleFontSize: 16,
+            labelColor: "#00355F",
+            titleColor: "#00355F",
+            grid: true,
+            gridColor: "#eeeeee"
+        },
+
+    }
+};
+vegaEmbed("#popvis", popvis
+);
