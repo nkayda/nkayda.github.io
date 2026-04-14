@@ -398,29 +398,29 @@ const POPDATA = [
   { 
     range: [2011, 2016],
     values: {
-        "Burnaby": 11.0,
-        "Coquitlam": 9.7,
-        "New Westminster": 14.0,
-        "Port Coquitlam": 5.3,
-        "Port Moody": 17.2,
-        "Richmond": 7.8,
-        "Surrey": 15.9,
-        "Vancouver": 3.7,
-        "Metro Vancouver": 8.2
+        "Burnaby": 6.4,
+        "Coquitlam": 11.4,
+        "New Westminster": 9.6,
+        "Port Coquitlam": 7.6,
+        "Port Moody": 3.5,
+        "Richmond": 6.3,
+        "Surrey": 12.2,
+        "Vancouver": 6.6,
+        "Metro Vancouver": 8.5
     }
   },
   {
     range: [2016, 2021],
     values: {
-        "Burnaby": 16.0,
-        "Coquitlam": 9.7,
-        "New Westminster": 14.0,
-        "Port Coquitlam": 5.3,
-        "Port Moody": 17.2,
-        "Richmond": 7.8,
-        "Surrey": 15.9,
-        "Vancouver": 3.7,
-        "Metro Vancouver": 8.2
+        "Burnaby":7.0,
+        "Coquitlam": 6.2,
+        "New Westminster": 11.3,
+        "Port Coquitlam": 4.4,
+        "Port Moody": 0.5,
+        "Richmond": 6.5,
+        "Surrey": 9.6,
+        "Vancouver": 4.6,
+        "Metro Vancouver": 7.0
     }
   }
 ];
@@ -471,8 +471,11 @@ function updateVisualization(index) {
     if (percent == null) return;
 
     // update text
-    row.querySelector(".svg-percent").textContent =
-      percent.toFixed(1) + "%";
+    row.querySelector(".svg-percent").textContent = percent.toFixed(1) + "%";
+
+      //update title
+    document.querySelector("#percent-year").textContent =
+     `Percent Growth in Population (${dataset.range[0]}–${dataset.range[1]})`;
 
     // update train
     const container = row.querySelector(".windows");
