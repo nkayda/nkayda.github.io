@@ -15,11 +15,11 @@
     href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
     rel="stylesheet" />
 
-    <!-- Vegalite -->
-    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vega-tooltip@0.30.0"></script>
+  <!-- Vegalite -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-tooltip@0.30.0"></script>
 
   <!-- ICONS -->
   <script src="https://kit.fontawesome.com/15940b28ff.js" crossorigin="anonymous"></script>
@@ -165,31 +165,183 @@
   <section>
     <p class="section-tag">Population</p>
     <h2>The rising population of Vancouver</h2>
-     <div id="popvis" class="img-responsive"></div>
+    <div id="popvis" class="img-responsive"></div>
     <p>
       According to data sourced from ___, between 2001–2021 the population of Metro Vancouver has risen from 1,990,000
       to 2,606,000.
     </p>
     <div class="column-split">
       <div class="column">
-          <h2>+30.95%</h2>
-          <p>population increase</p>
+        <h2>+30.95%</h2>
+        <p>population increase</p>
       </div>
       <div class="column">
-          <h2>+616,000</h2>
-          <p>people</p>
+        <h2>+616,000</h2>
+        <p>people</p>
       </div>
       <div class="column">
-          <h2>x</h2>
-          <p>additional stat</p>
+        <h2>x</h2>
+        <p>additional stat</p>
       </div>
     </div>
   </section>
 
   <section>
-    <h2>Key development moments</h2>
+    <h2>Percent Growth in Population</h2>
     <p>Intro to new vis goes here</p>
-    <img class="img-responsive" alt="Placeholder image" src="assets/our-experience-img.png" width="1136" height="664">
+    <div class="svg-vis-container">
+
+      <div class="svg-vis-row" data-city="Burnaby">
+        <p class="svg-label">Burnaby</p>
+        <div class="train-container">
+          <div class="train">
+            <div class="windows"></div>
+          </div>
+            <div class="wheel-container">
+            <div class="wheel"></div>
+            <div class="wheel"></div>
+          </div>
+        </div>
+        <p class="svg-percent"></p>
+      </div>
+
+
+      <div class="svg-vis-row" data-city="Coquitlam">
+        <p class="svg-label">Coquitlam</p>
+        <div class="train-container">
+          <div class="train">
+            <div class="windows"></div>
+          </div>
+            <div class="wheel-container">
+            <div class="wheel"></div>
+            <div class="wheel"></div>
+          </div>
+        </div>
+        <p class="svg-percent"></p>
+      </div>
+
+
+      <div class="svg-vis-row" data-city="New Westminster">
+        <p class="svg-label">New Westminster</p>
+        <div class="train-container">
+          <div class="train">
+            <div class="windows"></div>
+          </div>
+            <div class="wheel-container">
+            <div class="wheel"></div>
+            <div class="wheel"></div>
+          </div>
+        </div>
+        <p class="svg-percent"></p>
+      </div>
+
+      <div class="svg-vis-row" data-city="Port Coquitlam">
+        <p class="svg-label">Port Coquitlam</p>
+        <div class="train-container">
+          <div class="train">
+            <div class="windows"></div>
+          </div>
+            <div class="wheel-container">
+            <div class="wheel"></div>
+            <div class="wheel"></div>
+          </div>
+        </div>
+        <p class="svg-percent"></p>
+      </div>
+
+      <div class="svg-vis-row" data-city="Port Moody">
+        <p class="svg-label">Port Moody</p>
+        <div class="train-container">
+          <div class="train">
+            <div class="windows"></div>
+          </div>
+            <div class="wheel-container">
+            <div class="wheel"></div>
+            <div class="wheel"></div>
+          </div>
+        </div>
+        <p class="svg-percent"></p>
+      </div>
+
+      <div class="svg-vis-row" data-city="Richmond">
+        <p class="svg-label">Richmond</p>
+        <div class="train-container">
+          <div class="train">
+            <div class="windows"></div>
+          </div>
+            <div class="wheel-container">
+            <div class="wheel"></div>
+            <div class="wheel"></div>
+          </div>
+        </div>
+        <p class="svg-percent"></p>
+      </div>
+      <div class="svg-vis-row" data-city="Surrey">
+        <p class="svg-label">Surrey</p>
+        <div class="train-container">
+          <div class="train">
+            <div class="windows"></div>
+          </div>
+            <div class="wheel-container">
+            <div class="wheel"></div>
+            <div class="wheel"></div>
+          </div>
+        </div>
+        <p class="svg-percent"></p>
+      </div>
+
+      <div class="svg-vis-row" data-city="Vancouver">
+        <p class="svg-label">Vancouver</p>
+        <div class="train-container">
+          <div class="train">
+            <div class="windows"></div>
+          </div>
+          <div class="wheel-container">
+            <div class="wheel"></div>
+            <div class="wheel"></div>
+          </div>
+
+        </div>
+        <p class="svg-percent"></p>
+      </div>
+      <div class="svg-vis-row" data-city="Metro Vancouver">
+        <p class="svg-label">Metro Vancouver</p>
+        <div class="train-container">
+          <div class="train">
+            <div class="windows"></div>
+          </div>
+            <div class="wheel-container">
+            <div class="wheel"></div>
+            <div class="wheel"></div>
+          </div>
+        </div>
+        <p class="svg-percent"></p>
+      </div>
+
+
+      <div class="vis-slider-container">
+        <div class="vis-track" id="track">
+          <div class="vis-range" id="range">
+            <div class="range-node"></div>
+            <div class="range-node"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pop-years-scale">
+
+        <p>2001</p>
+
+        <p>2006</p>
+
+        <p>2011</p>
+
+        <p>2016</p>
+
+        <p>2021</p>
+      </div>
+    </div>
+
     <p>Between 2001–2021 the population of Metro Vancouver has risen from 1,990,000 to 2,606,000.</p>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec nunc congue enim ultricies ullamcorper. In
       porta elit odio, ac vulputate augue interdum sagittis. Quisque fermentum augue in erat viverra, a hendrerit eros

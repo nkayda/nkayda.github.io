@@ -296,6 +296,7 @@ yearSlider.oninput = function() {
     add_line_recursive(waterfront);
 }
 
+// Population visualization line graph
 const popvis = {
     $schema: "https://vega.github.io/schema/vega-lite/v5.json",
 
@@ -361,3 +362,148 @@ const popvis = {
 };
 vegaEmbed("#popvis", popvis
 );
+
+
+// population percent growth data ****update 2011-2021***
+const POPDATA = [
+  {
+    range: [2001, 2006],
+    values: {
+        "Burnaby": 3.7,
+        "Coquitlam": 0.6,
+        "New Westminster": 5.9,
+        "Port Coquitlam": 1.5,
+        "Port Moody": 14.0,
+        "Richmond": 5.2,
+        "Surrey": 11.9,
+        "Vancouver": 4.8,
+        "Metro Vancouver": 5.5
+    }
+  },
+  {
+    range: [2006, 2011],
+    values: {
+        "Burnaby": 9.0,
+        "Coquitlam": 9.7,
+        "New Westminster": 14.0,
+        "Port Coquitlam": 5.3,
+        "Port Moody": 17.2,
+        "Richmond": 7.8,
+        "Surrey": 15.9,
+        "Vancouver": 3.7,
+        "Metro Vancouver": 8.2
+    }
+  },
+//   placeholders for now
+  { 
+    range: [2011, 2016],
+    values: {
+        "Burnaby": 11.0,
+        "Coquitlam": 9.7,
+        "New Westminster": 14.0,
+        "Port Coquitlam": 5.3,
+        "Port Moody": 17.2,
+        "Richmond": 7.8,
+        "Surrey": 15.9,
+        "Vancouver": 3.7,
+        "Metro Vancouver": 8.2
+    }
+  },
+  {
+    range: [2016, 2021],
+    values: {
+        "Burnaby": 16.0,
+        "Coquitlam": 9.7,
+        "New Westminster": 14.0,
+        "Port Coquitlam": 5.3,
+        "Port Moody": 17.2,
+        "Richmond": 7.8,
+        "Surrey": 15.9,
+        "Vancouver": 3.7,
+        "Metro Vancouver": 8.2
+    }
+  }
+];
+
+const range = document.getElementById("range");
+const track = range.parentElement;
+
+let isDragging = false;
+let currIndex = 0;
+
+range.addEventListener("mousedown", () => {isDragging = true;});
+
+document.addEventListener("mouseup", () => {isDragging = false;});
+
+document.addEventListener("mousemove", (e) => {
+  if (!isDragging) return;
+
+  const rect = track.getBoundingClientRect();
+  let x = e.clientX - rect.left;
+
+  const maxX = rect.width - range.offsetWidth;
+  x = Math.max(0, Math.min(x, maxX));
+
+  range.style.left = (x / rect.width) * 100 + "%";
+
+  const percent = x / rect.width;
+
+  const index = Math.min(
+    POPDATA.length - 1,
+    Math.floor(percent * POPDATA.length)
+  );
+
+  if (index !== currIndex) {
+    currIndex = index;
+    updateVisualization(index);
+  }
+});
+updateVisualization(0);
+
+// update the visualization based on slider position
+function updateVisualization(index) {
+  const dataset = POPDATA[index]; 
+
+  document.querySelectorAll(".svg-vis-row").forEach(row => {
+    const city = row.dataset.city;
+    const percent = dataset.values[city];
+
+    if (percent == null) return;
+
+    // update text
+    row.querySelector(".svg-percent").textContent =
+      percent.toFixed(1) + "%";
+
+    // update train
+    const container = row.querySelector(".windows");
+    renderWindows(container, percent);
+  });
+}
+
+// windows
+function renderWindows(container, percent) {
+  container.innerHTML = "";
+
+  const full = Math.floor(percent);
+  const decimal = percent - full;
+
+  // full windows
+  for (let i = 0; i < full; i++) {
+    const win = document.createElement("div");
+    win.className = "window";
+    container.appendChild(win);
+  }
+
+  // partial window
+  if (decimal > 0) {
+    const win = document.createElement("div");
+    win.className = "window partial";
+
+    const fill = document.createElement("div");
+    fill.className = "window-fill";
+    fill.style.width = `${decimal * 100}%`;
+
+    win.appendChild(fill);
+    container.appendChild(win);
+  }
+}
