@@ -364,7 +364,7 @@ vegaEmbed("#popvis", popvis
 );
 
 
-// population percent growth data ****update 2011-2021***
+// population percent growth data 
 const POPDATA = [
   {
     range: [2001, 2006],
@@ -394,7 +394,6 @@ const POPDATA = [
         "Metro Vancouver": 8.2
     }
   },
-//   placeholders for now
   { 
     range: [2011, 2016],
     values: {
