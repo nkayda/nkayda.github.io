@@ -20,30 +20,6 @@ var stationMarkers = L.layerGroup().addTo(map);
 var routeLines = [];
 var routeLinesGroup = L.layerGroup().addTo(map);
 
-var boundries = [];
-var boundriesGroup = L.layerGroup().addTo(map);
-
-// var van_boundries_geoJSON = L.geoJSON(city_boundary, {
-//     style: {color: "green", fill: true, fillColor: 'white',fillOpacity: 0.25}
-// }).bindPopup(function (layer) {
-//     // layer.feature.properties.name
-// }).addTo(boundriesGroup);
-
-var boundriesAPI_URL = 'https://services6.arcgis.com/56eqCzQ5SZhBaDST/arcgis/rest/services/Administrative_Boundaries/FeatureServer/10/query?where=1%3D1&outFields=MunNum,FullName,Shape__Area,Shape__Length&outSR=4326&f=geojson'
-
-fetch(boundriesAPI_URL).then(response => {
-    // console.log(response);
-    if(!response.ok) return;
-    return response.json();
-}).then(data => {
-    console.log(data);
-    L.geoJSON(data, {
-        style: {color: "green"}
-    }).bindPopup(function (layer) {
-        return layer.feature.properties.FullName;
-    }).addTo(boundriesGroup);
-})
-
 function addStationToMap(station){
     // console.log(station);
     var fill = 'white';
