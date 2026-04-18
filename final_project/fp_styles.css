@@ -289,8 +289,7 @@ a {
 }
 
 /* LEAFLET AND DATA VIS INTERACTIONS */
-#map { height: 555px; width: 100%;}
-#cities_pop_map { height: 500px; width: 100%;}
+.map { height: 555px; width: 100%;}
 
 .map-container {
     background-color: #cdcdcd;
