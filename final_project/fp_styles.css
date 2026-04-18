@@ -563,7 +563,7 @@ html {
 }
 
 /* LEAFLET AND DATA VIS INTERACTIONS */
-#map { height: 555px; width: 100%;}
+.map { height: 555px; width: 100%;}
 
 .map-container {
     background-color: #cdcdcd;
