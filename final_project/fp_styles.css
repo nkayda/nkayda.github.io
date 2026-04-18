@@ -83,11 +83,16 @@ footer {
     margin-top: auto;
     padding: 1rem 4rem;
     gap: 2rem;
-    border-top: solid 1px #282828;
     text-align: center;
     justify-content: center;
     flex-wrap: wrap;
     row-gap: 1rem;
+    background-color: #005DAA;
+}
+
+footer p {
+    color: white;
+    font-size: 14px;
 }
 
 
@@ -235,6 +240,11 @@ a {
     align-items: center;
     gap: 8px;
     align-self: stretch;
+    margin-top: 1rem;
+}
+
+.fun-fact-box p {
+    margin: 0px;
 }
 
 .question-box {
@@ -246,6 +256,7 @@ a {
     align-items: center;
     gap: 8px;
     align-self: stretch;
+    margin-top: 1rem;
 }
 
 .question-box h3, .question-box p {
@@ -455,7 +466,57 @@ a {
     margin: 0;
 }
 
-/*  */
+.nav-dot-group {
+    display: flex; 
+    align-items: center; 
+    flex-direction: column;
+    gap: 12px;
+}
+
+.line {
+    width: 100%;
+    height: 4px;
+    position: absolute;
+    background: #FFC525;
+    top: 24px;
+    z-index: 1;
+}
+
+.link {
+    color: #0b5c8a;
+    text-decoration: underline;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 96px
+}
+
+/* attempt at train animated navbar */
+
+/* #train-nav {
+    animation: slide linear;
+    animation-timeline: scroll();
+} */
+
+/* @keyframes slide {
+    to {
+        transform: translateX(200%);
+    }
+} */
+
+/* .navtrain-container {
+    max-width: 1024px;
+    display: flex;
+    flex-direction: row;
+} */
+
+/* #scroll-progress {
+  width: 30%;
+  height: 4px;
+  background: #FFC525;
+  z-index: 10000;
+} */
 
 @media (max-width: 40rem) {
     .column-split {
