@@ -26,7 +26,7 @@ function addStationToMap(station){
     var size = 6;
     if(station.openDate == year) {fill = '#7bca7f'; size = 10;}
     var marker = L.circleMarker([station.x, station.y], {radius: size, color: station.color, fillColor: fill, fillOpacity: 1, weight: 5}).addTo(stationMarkers);
-    marker.bindPopup(`${station.name} \n ${station.openDate}`);
+    marker.bindPopup(`<h3>${station.name}</h3> <h4>Opened in <span style="font-weight: 500; color: #008A07">${station.openDate}</span></h4>`); 
     markers.push(marker);
 }
 
