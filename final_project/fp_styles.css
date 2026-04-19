@@ -39,6 +39,16 @@ h3 {
     margin-bottom: .5rem;
 }
 
+h4 {
+    font-size: 1rem;
+    font-weight: 400;
+    text-decoration: none;
+    margin: 0rem 0rem .5rem 0rem;
+    font-family: "Fira Sans", sans-serif;
+    line-height: 1.8rem;
+    width: 100%;
+}
+
 p {
     font-size: 1.125rem;
     text-decoration: none;
@@ -83,11 +93,16 @@ footer {
     margin-top: auto;
     padding: 1rem 4rem;
     gap: 2rem;
-    border-top: solid 1px #282828;
     text-align: center;
     justify-content: center;
     flex-wrap: wrap;
     row-gap: 1rem;
+    background-color: #005DAA;
+}
+
+footer p {
+    color: white;
+    font-size: 14px;
 }
 
 
@@ -235,6 +250,11 @@ a {
     align-items: center;
     gap: 8px;
     align-self: stretch;
+    margin-top: 1rem;
+}
+
+.fun-fact-box p {
+    margin: 0px;
 }
 
 .question-box {
@@ -246,10 +266,16 @@ a {
     align-items: center;
     gap: 8px;
     align-self: stretch;
+    margin-top: 1rem;
 }
 
-.question-box h3, .question-box p {
+.question-box h3 {
     color: #FFF;
+}
+
+.question-box p {
+    color: #FFF;
+    margin: 0px;
 }
 
 .icon-align {
@@ -455,7 +481,57 @@ a {
     margin: 0;
 }
 
-/*  */
+.nav-dot-group {
+    display: flex; 
+    align-items: center; 
+    flex-direction: column;
+    gap: 12px;
+}
+
+.line {
+    width: 100%;
+    height: 4px;
+    position: absolute;
+    background: #FFC525;
+    top: 24px;
+    z-index: 1;
+}
+
+.link {
+    color: #0b5c8a;
+    text-decoration: underline;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 96px
+}
+
+/* attempt at train animated navbar */
+
+/* #train-nav {
+    animation: slide linear;
+    animation-timeline: scroll();
+} */
+
+/* @keyframes slide {
+    to {
+        transform: translateX(200%);
+    }
+} */
+
+/* .navtrain-container {
+    max-width: 1024px;
+    display: flex;
+    flex-direction: row;
+} */
+
+/* #scroll-progress {
+  width: 30%;
+  height: 4px;
+  background: #FFC525;
+  z-index: 10000;
+} */
 
 @media (max-width: 40rem) {
     .column-split {
@@ -502,7 +578,7 @@ a {
 }
 
 /* LEAFLET AND DATA VIS INTERACTIONS */
-#map { height: 555px; width: 100%;}
+.map { height: 555px; width: 100%;}
 
 .map-container {
     background-color: #cdcdcd;
@@ -555,4 +631,13 @@ a {
 .instruction-text {
     opacity: 50%;
     text-align: center;
+}
+
+.leaflet-popup-content {
+    margin: 0px;
+    text-align: center;
+}
+
+.leaflet-popup-content h3, .leaflet-popup-content h4 {
+    margin: 0px;
 }
