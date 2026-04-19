@@ -641,3 +641,7 @@ html {
 .leaflet-popup-content h3, .leaflet-popup-content h4 {
     margin: 0px;
 }
+
+.leaflet-interactive{
+    z-index: 10;
+}
