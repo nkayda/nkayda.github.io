@@ -15,7 +15,7 @@ var boundriesGroup = L.layerGroup().addTo(pop_map);
 
 var boundriesAPI_URL = 'https://services6.arcgis.com/56eqCzQ5SZhBaDST/arcgis/rest/services/Administrative_Boundaries/FeatureServer/10/query?where=1%3D1&outFields=MunNum,FullName,Shape__Area,Shape__Length&outSR=4326&f=geojson'
 
-var metroVanCities = ['City of Vancouver', 'City of Burnaby', 'City of Richmond', 'City of New Westminster', 'City of Coquitlam', 'City of Port Coquitlam', 'City of Poort Moody', 'City of Surrey']
+var metroVanCities = ['City of Vancouver', 'City of Burnaby', 'City of Richmond', 'City of New Westminster', 'City of Coquitlam', 'City of Port Coquitlam', 'City of Port Moody', 'City of Surrey']
 
 var cities_year_slider = document.getElementById('cities_years_slider');
 
@@ -29,6 +29,7 @@ var city_populations = [
     {name: 'City of New Westminster', '2001': 57222, '2006': 60688, '2011': 67949, '2016': 74761, '2021': 82943},
     {name: 'City of Coquitlam', '2001': 117942, '2006': 118650, '2011': 130540, '2016': 146146, '2021': 155554},
     {name: 'City of Port Coquitlam', '2001': 53171, '2006': 54028, '2011': 57013, '2016': 61522, '2021': 64205},
+    {name: 'City of Port Moody', '2001': 24958, '2006': 28626, '2011': 33900, '2016': 35065, '2021': 34987},
 ]
 
 function setupCityFeatures(feature, layer){
