@@ -44,7 +44,7 @@ function setupCityIncFeatures(feature, layer){
     });
 
     layer.setStyle({
-        fillOpacity: (inc/(min+max))
+        fillOpacity: ((inc-min)/(max-min))
     })
 }
 function addCities_inc(){
