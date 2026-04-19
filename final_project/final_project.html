@@ -15,6 +15,12 @@
     href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
     rel="stylesheet" />
 
+  <!-- Vegalite -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-tooltip@0.30.0"></script>
+
   <!-- ICONS -->
   <script src="https://kit.fontawesome.com/15940b28ff.js" crossorigin="anonymous"></script>
 
@@ -36,22 +42,67 @@
 
 <body>
   <nav class="navbar">
+
+    <!-- <div id="scroll-progress"></div> -->
+
+    <!-- <div class="navtrain-container">
+      <object data="./assets/TrainCircle.svg" type="image/svg+xml" id="train-nav"></object>
+      <div class="line"></div>
+    </div> -->
+
     <ul class="nav-elements">
-      <li><a href="">Introduction</a></li>
-      <li><a href="">SkyTrain Stations</a></li>
-      <li><a href="">Population</a></li>
-      <li><a href="">Income</a></li>
-      <li><a href="">Conclusion</a></li>
-      <li><a href="">Expansion</a></li>
+      <div class="nav-dot-group">
+        <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" style="z-index: 2;">
+          <circle cx="7.5" cy="7.5" r="5.5" fill="white" stroke="#F1C34E" stroke-width="4" />
+        </svg>
+        <li><a href="#Introduction">Introduction</a></li>
+      </div>
+
+      <div class="nav-dot-group">
+        <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" style="z-index: 2;">
+          <circle cx="7.5" cy="7.5" r="5.5" fill="white" stroke="#F1C34E" stroke-width="4" />
+        </svg>
+        <li><a href="#SkyTrainStations">SkyTrain Stations</a></li>
+      </div>
+
+      <div class="nav-dot-group">
+        <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" style="z-index: 2;">
+          <circle cx="7.5" cy="7.5" r="5.5" fill="white" stroke="#F1C34E" stroke-width="4" />
+        </svg>
+        <li><a href="#Population">Population</a></li>
+      </div>
+
+      <div class="nav-dot-group">
+        <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" style="z-index: 2;">
+          <circle cx="7.5" cy="7.5" r="5.5" fill="white" stroke="#F1C34E" stroke-width="4" />
+        </svg>
+        <li><a href="#Income">Income</a></li>
+      </div>
+
+      <div class="nav-dot-group">
+        <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" style="z-index: 2;">
+          <circle cx="7.5" cy="7.5" r="5.5" fill="white" stroke="#F1C34E" stroke-width="4" />
+        </svg>
+        <li><a href="#Conclusion">Conclusion</a></li>
+      </div>
+
+      <div class="nav-dot-group">
+        <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" style="z-index: 2;">
+          <circle cx="7.5" cy="7.5" r="5.5" fill="white" stroke="#F1C34E" stroke-width="4" />
+        </svg>
+        <li><a href="#Expansion">Expansion</a></li>
+      </div>
+      <div class="line"></div>
     </ul>
   </nav>
 
   <section class="landing-section">
+    <img class="hero-photo" src="./assets/hero photo.svg" alt="hero image" />
     <h1>Snappy Title Goes Here</h1>
     <p class="name-text">By Roan Clifford, Natalie Kayda, and Amy Zhao</p>
   </section>
 
-  <section>
+  <section id="Introduction">
     <p class="section-tag">Introduction</p>
     <h2>The SkyTrain</h2>
     <p>
@@ -62,7 +113,8 @@
       them to explore snapshots of time in Metro-Vancouver’s history and learn
       about major events and developments.
     </p>
-    <img class="img-responsive" alt="Placeholder image" src="assets/our-experience-img.png" width="1136" height="664">
+    <img class="img-responsive" alt="SkyTrain on tracks" src="assets/SkyTrainImage.jpg" width="1136" height="664">
+    <p>Image from <a class="link" href="https://www.surrey.ca/services-payments/parking-streets-transportation/surrey-langley-skytrain">City of Surrey</a></p>
   </section>
 
   <section>
@@ -74,10 +126,11 @@
       hendrerit eros imperdiet. Praesent at lectus in elit porttitor faucibus
       vel sed turpis.
     </p>
-    <img class="img-responsive" alt="Placeholder image" src="assets/our-experience-img.png" width="1136" height="664">
+    <img class="img-responsive" alt="Natalie and Amy using the SkyTrain" src="assets/NatAndAmy.jpg" width="1136" height="664">
+    <p>Photographs by us :D</p>
   </section>
 
-  <section>
+  <section id="SkyTrainStations">
     <p class="section-tag">SkyTrain Stations</p>
     <h2>SkyTrain stations over time (2001–2021)</h2>
     <p>
@@ -127,7 +180,7 @@
     </p>
 
     <div class="text-group">
-      <object data="./assets/canada-line.svg" type="image/svg+xml"></object>
+      <object data="./assets/canada line.svg" type="image/svg+xml"></object>
       <h3>Canada Line – 2009</h3>
       <p>15 stations were added as part of the Canada Line, adding 19.2 km to the SkyTrain network and a direct
         connection to Vancouver International Airport (YVR).</p>
@@ -149,44 +202,43 @@
     <div class="fun-fact-box">
       <div class="icon-align">
         <object data="./assets/train-icon-dark.svg" type="image/svg+xml"></object>
-        <h3>Question?</h3>
+        <h3>Fun Fact!</h3>
       </div>
       <p>The Canada Line was developed in advance of the 2011 Olympics, for which Vancouver was the host city.</p>
     </div>
 
   </section>
 
-  <section>
+  <section id="Population">
     <p class="section-tag">Population</p>
     <h2>The rising population of Vancouver</h2>
+    <div id="popvis" class="img-responsive"></div>
     <p>
       According to data sourced from ___, between 2001–2021 the population of Metro Vancouver has risen from 1,990,000
       to 2,606,000.
     </p>
     <div class="column-split">
       <div class="column">
-          <h2>+30.95%</h2>
-          <p>population increase</p>
+        <h2>+30.95%</h2>
+        <p>population increase</p>
       </div>
       <div class="column">
-          <h2>+616,000</h2>
-          <p>people</p>
+        <h2>+616,000</h2>
+        <p>people</p>
       </div>
       <div class="column">
-          <h2>x</h2>
-          <p>additional stat</p>
+        <h2>x</h2>
+        <p>additional stat</p>
       </div>
     </div>
-  </section>
 
-  <section>
-    <h2>Key development moments</h2>
-    <p>Intro to new vis goes here</p>
-    <img class="img-responsive" alt="Placeholder image" src="assets/our-experience-img.png" width="1136" height="664">
-    <p>Between 2001–2021 the population of Metro Vancouver has risen from 1,990,000 to 2,606,000.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec nunc congue enim ultricies ullamcorper. In
-      porta elit odio, ac vulputate augue interdum sagittis. Quisque fermentum augue in erat viverra, a hendrerit eros
-      imperdiet. Praesent at lectus in elit porttitor faucibus vel sed turpis.</p>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec nunc
+      congue enim ultricies ullamcorper. In porta elit odio, ac vulputate
+      augue interdum sagittis. Quisque fermentum augue in erat viverra, a
+      hendrerit eros imperdiet. Praesent at lectus in elit porttitor faucibus
+      vel sed turpis.
+    </p>
 
     <div class="question-box">
       <div class="icon-align">
@@ -208,7 +260,287 @@
       vel sed turpis.
     </p>
     <div class="map-container">
-      <div id="cities_pop_map" class="map"></div>
+      <div id="map_city_population" class="map"></div>
+    </div>
+    <p class="instruction-text"><i class="fa-solid fa-arrows-left-right fa-sm"></i> Move the slider to reveal changes
+      over the
+      years.</p>
+    <input class="map-years-slider " type="range" min="2001" max="2021" value="2001" step="1" class="slider"
+      id="years_slider" />
+    <div class="map-years-scale">
+      <p>2001</p>
+      <div class="slider-tick"></div>
+      <div class="slider-tick"></div>
+      <div class="slider-tick"></div>
+      <div class="slider-tick"></div>
+      <p>2006</p>
+      <div class="slider-tick"></div>
+      <div class="slider-tick"></div>
+      <div class="slider-tick"></div>
+      <div class="slider-tick"></div>
+      <p>2011</p>
+      <div class="slider-tick"></div>
+      <div class="slider-tick"></div>
+      <div class="slider-tick"></div>
+      <div class="slider-tick"></div>
+      <p>2016</p>
+      <div class="slider-tick"></div>
+      <div class="slider-tick"></div>
+      <div class="slider-tick"></div>
+      <div class="slider-tick"></div>
+      <p>2021</p>
+    </div>
+  </section>
+
+  <section>
+    <h2 id="percent-year">Percent Growth in Population</h2>
+    <p>Intro to new vis goes here</p>
+    <div class="svg-vis-container">
+
+      <div class="legend-container">
+        <object data="./assets/rectangle.svg" type="image/svg+xml"></object>
+        <p>= 1%</p>
+      </div>
+
+      <div class="svg-vis-row" data-city="Burnaby">
+        <p class="svg-label">Burnaby</p>
+        <div class="train-container">
+          <div class="train">
+            <div class="windows"></div>
+          </div>
+          <div class="wheel-container">
+            <div class="wheel"></div>
+            <div class="wheel"></div>
+          </div>
+        </div>
+        <p class="svg-percent"></p>
+      </div>
+
+      <div class="svg-vis-row" data-city="Coquitlam">
+        <p class="svg-label">Coquitlam</p>
+        <div class="train-container">
+          <div class="train">
+            <div class="windows"></div>
+          </div>
+          <div class="wheel-container">
+            <div class="wheel"></div>
+            <div class="wheel"></div>
+          </div>
+        </div>
+        <p class="svg-percent"></p>
+      </div>
+
+      <div class="svg-vis-row" data-city="New Westminster">
+        <p class="svg-label">New Westminster</p>
+        <div class="train-container">
+          <div class="train">
+            <div class="windows"></div>
+          </div>
+          <div class="wheel-container">
+            <div class="wheel"></div>
+            <div class="wheel"></div>
+          </div>
+        </div>
+        <p class="svg-percent"></p>
+      </div>
+
+      <div class="svg-vis-row" data-city="Port Coquitlam">
+        <p class="svg-label">Port Coquitlam</p>
+        <div class="train-container">
+          <div class="train">
+            <div class="windows"></div>
+          </div>
+          <div class="wheel-container">
+            <div class="wheel"></div>
+            <div class="wheel"></div>
+          </div>
+        </div>
+        <p class="svg-percent"></p>
+      </div>
+
+      <div class="svg-vis-row" data-city="Port Moody">
+        <p class="svg-label">Port Moody</p>
+        <div class="train-container">
+          <div class="train">
+            <div class="windows"></div>
+          </div>
+          <div class="wheel-container">
+            <div class="wheel"></div>
+            <div class="wheel"></div>
+          </div>
+        </div>
+        <p class="svg-percent"></p>
+      </div>
+
+      <div class="svg-vis-row" data-city="Richmond">
+        <p class="svg-label">Richmond</p>
+        <div class="train-container">
+          <div class="train">
+            <div class="windows"></div>
+          </div>
+          <div class="wheel-container">
+            <div class="wheel"></div>
+            <div class="wheel"></div>
+          </div>
+        </div>
+        <p class="svg-percent"></p>
+      </div>
+
+      <div class="svg-vis-row" data-city="Surrey">
+        <p class="svg-label">Surrey</p>
+        <div class="train-container">
+          <div class="train">
+            <div class="windows"></div>
+          </div>
+          <div class="wheel-container">
+            <div class="wheel"></div>
+            <div class="wheel"></div>
+          </div>
+        </div>
+        <p class="svg-percent"></p>
+      </div>
+
+      <div class="svg-vis-row" data-city="Vancouver">
+        <p class="svg-label">Vancouver</p>
+        <div class="train-container">
+          <div class="train">
+            <div class="windows"></div>
+          </div>
+          <div class="wheel-container">
+            <div class="wheel"></div>
+            <div class="wheel"></div>
+          </div>
+        </div>
+        <p class="svg-percent"></p>
+      </div>
+
+      <div class="svg-vis-row" data-city="Metro Vancouver">
+        <p class="svg-label">Metro Vancouver</p>
+        <div class="train-container">
+          <div class="train">
+            <div class="windows"></div>
+          </div>
+          <div class="wheel-container">
+            <div class="wheel"></div>
+            <div class="wheel"></div>
+          </div>
+        </div>
+        <p class="svg-percent"></p>
+      </div>
+
+      <div class="vis-slider-container">
+        <p class="instruction-text"><i class="fa-solid fa-arrows-left-right fa-sm"></i> Move the slider to reveal
+          changes
+          over the
+          years.</p>
+        <div class="vis-track" id="track">
+          <div class="vis-range" id="range">
+            <div class="range-node"></div>
+            <div class="range-node"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pop-years-scale">
+
+        <p>2001</p>
+
+        <p>2006</p>
+
+        <p>2011</p>
+
+        <p>2016</p>
+
+        <p>2021</p>
+      </div>
+    </div>
+
+    <p>Between 2001–2021 the population of Metro Vancouver has risen from 1,990,000 to 2,606,000.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec nunc congue enim ultricies ullamcorper. In
+      porta elit odio, ac vulputate augue interdum sagittis. Quisque fermentum augue in erat viverra, a hendrerit eros
+      imperdiet. Praesent at lectus in elit porttitor faucibus vel sed turpis.</p>
+
+  </section>
+
+  <section>
+    <h2>Population of cities over time, by forward sortation areas (2001–2021)</h2>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec nunc
+      congue enim ultricies ullamcorper. In porta elit odio, ac vulputate
+      augue interdum sagittis. Quisque fermentum augue in erat viverra, a
+      hendrerit eros imperdiet. Praesent at lectus in elit porttitor faucibus
+      vel sed turpis.
+    </p>
+    <div class="map-container">
+      <div id="map_city_population_fsa" class="map"></div>
+    </div>
+    <p class="instruction-text"><i class="fa-solid fa-arrows-left-right fa-sm"></i> Move the slider to reveal changes
+      over the
+      years.</p>
+    <input class="map-years-slider " type="range" min="2001" max="2021" value="2001" step="1" class="slider"
+      id="years_slider" />
+    <div class="map-years-scale">
+      <p>2001</p>
+      <div class="slider-tick"></div>
+      <div class="slider-tick"></div>
+      <div class="slider-tick"></div>
+      <div class="slider-tick"></div>
+      <p>2006</p>
+      <div class="slider-tick"></div>
+      <div class="slider-tick"></div>
+      <div class="slider-tick"></div>
+      <div class="slider-tick"></div>
+      <p>2011</p>
+      <div class="slider-tick"></div>
+      <div class="slider-tick"></div>
+      <div class="slider-tick"></div>
+      <div class="slider-tick"></div>
+      <p>2016</p>
+      <div class="slider-tick"></div>
+      <div class="slider-tick"></div>
+      <div class="slider-tick"></div>
+      <div class="slider-tick"></div>
+      <p>2021</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Key changes</h2>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec nunc congue enim ultricies ullamcorper. In porta elit odio, ac vulputate augue interdum sagittis. Quisque fermentum augue in erat viverra, a hendrerit eros imperdiet. Praesent at lectus in elit porttitor faucibus vel sed turpis.
+    </p>
+    <p>
+      According to data sourced from ___, between 2001–2021 the population of Metro Vancouver has risen from 1,990,000
+      to 2,606,000.
+    </p>
+    <div class="column-split">
+      <div class="column">
+        <h2>+30.95%</h2>
+        <p>population increase</p>
+      </div>
+      <div class="column">
+        <h2>+616,000</h2>
+        <p>people</p>
+      </div>
+      <div class="column">
+        <h2>x</h2>
+        <p>additional stat</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="Income">
+    <p class="section-tag">Income</p>
+    <h2>Income Over Time (2001-2021)</h2>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec nunc
+      congue enim ultricies ullamcorper. In porta elit odio, ac vulputate
+      augue interdum sagittis. Quisque fermentum augue in erat viverra, a
+      hendrerit eros imperdiet. Praesent at lectus in elit porttitor faucibus
+      vel sed turpis.
+    </p>
+    <div class="map-container">
+       <div id="map-income" class="map"></div>
     </div>
     <p class="instruction-text"><i class="fa-solid fa-arrows-left-right fa-sm"></i> Move the slider to reveal changes
       over the
@@ -245,6 +577,31 @@
   </section>
 
   <section>
+    <h2>Key changes</h2>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec nunc congue enim ultricies ullamcorper. In porta elit odio, ac vulputate augue interdum sagittis. Quisque fermentum augue in erat viverra, a hendrerit eros imperdiet. Praesent at lectus in elit porttitor faucibus vel sed turpis.
+    </p>
+    <p>
+      According to data sourced from ___, between 2001–2021 the population of Metro Vancouver has risen from 1,990,000
+      to 2,606,000.
+    </p>
+    <div class="column-split">
+      <div class="column">
+        <h2>+30.95%</h2>
+        <p>population increase</p>
+      </div>
+      <div class="column">
+        <h2>+616,000</h2>
+        <p>people</p>
+      </div>
+      <div class="column">
+        <h2>x</h2>
+        <p>additional stat</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="Conclusion">
     <p class="section-tag">Conclusion</p>
     <h2>Takeaways</h2>
     <p>
@@ -264,7 +621,7 @@
     </p>
   </section>
 
-  <section>
+  <section id="Expansion">
     <p class="section-tag">Expansion</p>
     <h2>Due to known population increase patterns, many additional stations are in development or being advocated for.
     </h2>
@@ -284,12 +641,13 @@
       vel sed turpis.
     </p>
   </section>
-
-  <!-- <script src="../vis.js" type="text/javascript"></script> -->
+  <footer>
+    <p>Designed and coded by Roan Clifford, Amy Zhao, and Natalie Kayda for IAT 355 in 2026</p>
+  </footer>
+  <!-- <script src="./scroll.js" type="text/javascript"></script> -->
   <script src="../api.js" type="text/javascript"></script>
   <script src="./main.js" type="text/javascript"></script>
   <script src="./population_cities_map.js" type="text/javascript"></script>
   <script src="./population_FSA_map.js" type="text/javascript"></script>
 </body>
-
 </html>
