@@ -1,4 +1,4 @@
-var FSA_pop_map = L.map('FSA_pop_map', {
+var FSA_pop_map = L.map('map_city_population_fsa', {
     scrollWheelZoom: false,
     center: [49.206944, -122.911111],
     zoom: 11
@@ -36,34 +36,25 @@ const Coquit_FSAs = [
     'V3B','V3C','V3E','V3K','V3J'
 ]
 
-var census_geo_2016 = fetch('https://www12.statcan.gc.ca/rest/census-recensement/CR2016Geo.json?lang=E&geos=FSA&cpt=59')
-    .then(response => {
-        if(!response.ok) return;
-        return response.json();
-    })
-
-var census_2016 = fetch('https://www12.statcan.gc.ca/rest/census-recensement/CPR2016.json?lang=E&dguid=2016A0011V3L&topic=13&notes=0&stat=0')
-    .then(response => {
-        if(!response.ok) return;
-        // console.log(response);
-        return response.json();
-        return res.slice(2);
-    }).then(data => {
-        console.log(data);
-    })
-
 
 async function getPop(CFSAUID) {
-    var pop = await fetch(`https://www12.statcan.gc.ca/rest/census-recensement/CPR2016.json?lang=E&dguid=2016A0011${CFSAUID}&topic=13&notes=0&stat=0`)
-        .then(response => {
-            if(!response.ok) return;
-            return response.json();
-        }).then(data => {
-            return data.DATA[0][13];
-        }).then(pop => {
-            return pop;
-        })
-    return pop;
+    try {
+        var pop = await fetch(`https://www12.statcan.gc.ca/rest/census-recensement/CPR2016.json?lang=E&dguid=2016A0011${CFSAUID}&topic=13&notes=0&stat=0`)
+            .then(async response => {
+                if(!response.ok) return;
+                var txt = await response.text();
+                // console.log(`The fuckin: ${txt[0]}`);
+                return JSON.parse(txt);
+            }).then(data => {
+                return data.DATA[0][13];
+            }).then(pop => {
+                return pop;
+            })
+        return pop;
+    } catch (error) {
+        return `${error}`;
+    }
+    
 }
 
 async function setupFeature(feature, layer) {
@@ -82,41 +73,6 @@ async function setupMap() {
         })
 
     console.log(data);
-        
-    // L.geoJSON(data, {
-    //     filter: feature => {
-    //         if(feature.properties.PRNAME == "British Columbia / Colombie-Britannique") {
-    //             // console.log(feature);
-    //             return true;
-    //         }
-    //     },
-    //     style: feature => {
-    //         switch (true){
-    //             case Van_FSAs.includes(feature.properties.CFSAUID) :{
-    //                 return {color: `rgb(136, 0, 0)`, opacity: 0.8, fillColor: 'rgb(136, 0, 0)', fillOpacity: 0.9}
-    //             }
-    //             case Rich_FSAs.includes(feature.properties.CFSAUID):{
-    //                 return {color: `rgb(78, 249, 255)`, opacity: 0.8, fillColor: 'rgb(78, 249, 255)', fillOpacity: 0.9}
-    //             }
-    //             case Burn_FSAs.includes(feature.properties.CFSAUID):{
-    //                 return {color: `rgb(172, 78, 255)`, opacity: 0.8, fillColor: 'rgb(172, 78, 255)', fillOpacity: 0.9}
-    //             }
-    //             case NewWest_FSAs.includes(feature.properties.CFSAUID):{
-    //                 return {color: `rgb(156, 227, 255)`, opacity: 0.8, fillColor: 'rgb(156, 227, 255)', fillOpacity: 0.9}
-    //             }
-    //             case Coquit_FSAs.includes(feature.properties.CFSAUID):{
-    //                 return {color: `rgb(73, 196, 102)`, opacity: 0.8, fillColor: 'rgb(73, 196, 102)', fillOpacity: 0.9}
-    //             }
-    //             default :{
-    //                 return {color: `#088`, opacity: 0.8, fillColor: '#088', fillOpacity: 0.9}
-    //             }
-    //         }
-            
-    //     },
-    // }).bindPopup(async (layer) => {
-    //     var population = await getPop(layer.feature.properties.CFSAUID);
-    //     return `<p>${layer.feature.properties.CFSAUID}</p><p>${population}</p>`
-    // }).addTo(FSA_boundriesGroup);
 
     var geoMap = L.geoJSON(data,{
         onEachFeature: setupFeature,
