@@ -601,6 +601,21 @@ html {
 
 .map-years-slider {
     width: 80%;
+    -webkit-appearance: none;
+    appearance: none;
+    background: #FFC525;
+    height: 8px;
+    border-radius: 8px;
+}
+
+.map-years-slider::-webkit-slider-thumb  {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    border: 0;
+    background: url('./assets/TrainCircle24px.svg');
+    cursor: pointer;
 }
 
 .map-years-scale {
