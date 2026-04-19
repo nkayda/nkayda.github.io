@@ -645,3 +645,7 @@ html {
 .leaflet-interactive{
     z-index: 10;
 }
+
+figure{
+    width: 90%;
+}
