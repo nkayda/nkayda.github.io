@@ -38,13 +38,14 @@ function setupCityFeatures(feature, layer){
     var pop = cityObj[0][`${cities_year_slider.value}`];
     layer.bindPopup(`<h3>${feature.properties.FullName}</h3><h4>Population: <span style="font-weight: 500; color: #008A07">${pop}</span></h4>`);
 
-    var min = 9999999;
-    var max = 0;
+    var min = 24958;
+    var max = 696031;
     
-    city_populations.forEach(city => {
-        if(city[cities_year_slider.value] > max) max = city[cities_year_slider.value];
-        if(city[cities_year_slider.value] < min) min = city[cities_year_slider.value];
-    });
+    // city_populations.forEach(city => {
+    //     if(city[cities_year_slider.value] > max) max = city[cities_year_slider.value];
+    //     if(city[cities_year_slider.value] < min) min = city[cities_year_slider.value];
+    // });
+    console.log(`${cities_year_slider.value} - ${min}:${max}`)
 
     layer.setStyle({
         fillOpacity: ((pop-min)/(max-min))
