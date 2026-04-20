@@ -40,13 +40,22 @@ h3 {
 }
 
 h4 {
-    font-size: 1rem;
-    font-weight: 400;
+    font-size: .8rem;
+    font-weight: 500;
     text-decoration: none;
-    margin: 0rem 0rem .5rem 0rem;
+    margin: 0rem;
     font-family: "Fira Sans", sans-serif;
-    line-height: 1.8rem;
     width: 100%;
+}
+
+h5 {
+    font-size: 1.125rem;
+    font-weight: 500;
+    text-decoration: none;
+    margin: 0rem;
+    font-family: "Fira Sans", sans-serif;
+    width: 100%;
+    color: #008A07
 }
 
 p {

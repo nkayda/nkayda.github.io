@@ -14,7 +14,7 @@ var inc_boundries = [];
 var inc_boundriesGroup = L.layerGroup().addTo(income_map);
 
 
-var inc_year_slider = document.getElementById('income_years_slider');
+var inc_year_slider = document.getElementById('income_cities_slider');
 
 var inc_bounds = L.geoJSON(null);
 
@@ -48,9 +48,11 @@ function setupCityIncFeatures(feature, layer){
     })
 
     L.circle(cityObj[0].coords, {radius: 200, color: 'white', fillColor: 'white', fillOpacity: 1, weight: 5})
-        .bindTooltip(`<h3>${feature.properties.FullName}</h3><h4>Income: <span style="font-weight: 500; color: #008A07">$${inc}</span></h4>`, { permanent: true })
+        .bindTooltip(`<h4>${feature.properties.FullName} <br> <span style="font-weight: 400; font-size: .8rem;">${inc_year_slider.value} Median Household Income: </h4><h5>$${inc}</h5>`, { permanent: true })
         .addTo(inc_boundriesGroup);
 }
+
+
 function addCities_inc(){
     fetch(boundriesAPI_URL).then(response => {
         if(!response.ok) return;

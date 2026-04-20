@@ -73,7 +73,7 @@ function addCities(){
 addCities(); 
 city_populations.forEach(city => {
     L.circle(city.coords, {radius: 200, color: 'white', fillColor: 'white', fillOpacity: 1, weight: 5})
-        .bringToFront().bindTooltip(`<h3>${city.name}</h3><h4>Population: <span style="font-weight: 500; color: #008A07">${city[`${cities_year_slider.value}`]}</span></h4>`, { permanent: true })
+        .bringToFront().bindTooltip(`<h4>${city.name} <br> <span style="font-weight: 400; font-size: .8rem;">${cities_year_slider.value} Population: </span></h4><h5>${city[`${cities_year_slider.value}`]}</h5>`, { permanent: true })
         .addTo(boundriesGroup)
 })
 
@@ -86,7 +86,7 @@ cities_year_slider.oninput = function (){
 
     city_populations.forEach(city => {
         L.circle(city.coords, {radius: 200, color: 'white', fillColor: 'white', fillOpacity: 1, weight: 5})
-            .bindTooltip(`<h3>${city.name}</h3><h4>Population: <span style="font-weight: 500; color: #008A07">${city[`${cities_year_slider.value}`]}</span></h4>`, { permanent: true })
+            .bindTooltip(`<h4>${city.name} <br> <span style="font-weight: 400; font-size: .8rem;">${cities_year_slider.value} Population: </span></h4><h5>${city[`${cities_year_slider.value}`]}</h5>`, { permanent: true })
             .addTo(boundriesGroup);
     })
 }

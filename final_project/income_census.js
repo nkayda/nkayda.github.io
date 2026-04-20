@@ -15,7 +15,7 @@ var FSA_boundriesGroup = L.layerGroup().addTo(incmap);
 
 var FSA_bounds = L.geoJSON(null);
 
-var inc_year_slider = document.getElementById('income_slider');
+var inc_year_slider = document.getElementById('income_census_slider');
 
 var geoLayer;
 var incomeLookup = {};
@@ -97,12 +97,10 @@ function onEachFeature(feature, layer) {
     const income = incomeLookup[id];
 
     layer.bindPopup(`
-        <h3 style="font-weight: 500; font-size: 0.8rem;">Median Household </br> Income:</h3>
-         <h3 style="font-weight: 500; color: #008A07">$${income ? income.toLocaleString() : 'N/A'}</h3>
+        <h4>Median Household </br> Income in ${intYear}:</h4>
+         <h5 >$${income ? income.toLocaleString() : 'N/A'}</h>
     `);
-
    
-    
 }
 
 async function render(year) {
