@@ -1,6 +1,6 @@
 * {
     color: #00355F;
-    font-size: 1rem;
+    font-size: 1.125rem;
     box-sizing: border-box;
 }
 
@@ -674,5 +674,5 @@ html {
 }
 
 figure{
-    width: 90%;
+    width: 100%;
 }
