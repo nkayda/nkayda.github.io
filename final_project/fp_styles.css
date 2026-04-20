@@ -58,8 +58,14 @@ p {
     width: 100%;
 }
 
+b {
+    font-weight: 700;
+    font-size: 1.125rem;
+}
+
 a {
     text-decoration: none;
+    font-size: 1.125rem;
 }
 
 li {
@@ -202,6 +208,8 @@ a {
     margin: 1rem 0rem;
 }
 
+
+
 .visualization-container {
     background-color: #fff;
     width: 100%;
@@ -300,6 +308,7 @@ a {
     flex-direction: column;
     gap: 0;
 }
+
 
 .svg-vis-row{
     display: flex;
@@ -623,6 +632,7 @@ html {
     justify-content: space-between;
     align-items: center;
     width: 82%;
+    padding-bottom: 2rem;
 }
 
 .map-years-scale p {
@@ -631,6 +641,8 @@ html {
     margin: 0rem;
     font-weight: 600;
 }
+
+
 
 #years-slider {
     min-width: 100%;

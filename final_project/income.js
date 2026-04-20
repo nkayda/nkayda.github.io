@@ -1,4 +1,4 @@
-var map = L.map('map_city_population_fsa_test', {
+var incmap = L.map('incomemap', {
     scrollWheelZoom: false,
     center: [49.206944, -122.911111],
     zoom: 11
@@ -8,10 +8,10 @@ var map = L.map('map_city_population_fsa_test', {
 const FSA_pop_mtLayer = L.maptiler.maptilerLayer({
     apiKey: apikey(),
     style: L.maptiler.MapStyle.DATAVIZ.LIGHT
-}).addTo(map);
+}).addTo(incmap);
 
 var FSA_boundries = [];
-var FSA_boundriesGroup = L.layerGroup().addTo(map);
+var FSA_boundriesGroup = L.layerGroup().addTo(incmap);
 
 var FSA_bounds = L.geoJSON(null);
 
@@ -97,16 +97,19 @@ function onEachFeature(feature, layer) {
     const income = incomeLookup[id];
 
     layer.bindPopup(`
-        <h3>CT: ${id}</h3>
-        <p>Income: $${income ? income.toLocaleString() : 'N/A'}</p>
+        <h3 style="font-weight: 500; font-size: 0.8rem;">Median Household </br> Income:</h3>
+         <h3 style="font-weight: 500; color: #008A07">$${income ? income.toLocaleString() : 'N/A'}</h3>
     `);
+
+   
+    
 }
 
 async function render(year) {
     await loadCSV(year);
     const geoData = await loadGeoJSON(year);
     if (geoLayer) {
-        map.removeLayer(geoLayer);
+        incmap.removeLayer(geoLayer);
     }
     geoLayer = L.geoJSON(geoData, {
         // Closure to pass in the year
@@ -114,7 +117,7 @@ async function render(year) {
             return styleFeature(feature, year);
         },
         onEachFeature: onEachFeature
-    }).addTo(map);
+    }).addTo(incmap);
 }
 
 
